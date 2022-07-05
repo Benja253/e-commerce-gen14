@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import './headerScreen.css'
+import './styles/headerScreen.css'
 
 const HeaderScreen = () => {
 

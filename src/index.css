@@ -7,6 +7,8 @@
   --border-color: #9996;
   --color-primary-text: black;
   --color-secondary-text: #9996;
+  --color-footer: #3C3C3B;
+  --font-family: 'Lato', sans-serif;
 }
 
 /* -- Reset -- */
@@ -18,6 +20,7 @@ html {
 }
 body{
   margin: 0;
+  font-family: var(--font-family);
 }
 h1, h2, h3, h4, p, ul {
   margin-top: 0;
@@ -30,4 +33,12 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1;
 }
