@@ -19,7 +19,7 @@ const Form = () => {
         navigate('/')
       })
       .catch(err => {
-        localStorage.setItem('token', '')
+        localStorage.removeItem('token')
         setIsErrorLogin(true)
         setTimeout(() => {
           setIsErrorLogin(false)

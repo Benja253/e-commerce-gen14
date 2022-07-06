@@ -12,6 +12,7 @@ const LoginScreen = () => {
   const changedToken = localStorage.getItem('token')
 
   useEffect(() => {
+
     setToken(changedToken)
   }, [changedToken])
 
