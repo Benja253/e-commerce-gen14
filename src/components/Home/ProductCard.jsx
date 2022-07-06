@@ -7,7 +7,16 @@ const ProductCard = ({product}) => {
   return (
     <article className='card-product'>
       <header className='card-product__header'>
-        <img className='card-product__img' src={product.productImgs[0]} alt="" />
+        <img 
+          className='card-product__img-back' 
+          src={product.productImgs[1]} 
+          alt="" 
+        />
+        <img 
+          className='card-product__img' 
+          src={product.productImgs[0]} 
+          alt="" 
+        />
       </header>
       <div className='card-product__body'>
         <h2 className='card-product__title'>{product.title}</h2>
