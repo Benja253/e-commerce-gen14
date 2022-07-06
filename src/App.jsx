@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element={<HomeScreen />} />
           <Route path='/login' element={<LoginScreen />} />
 
-          <Route element={<ProtectedRoutes isLogged={true} />}>
+          <Route element={<ProtectedRoutes />}>
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/purchases" element={<PurchasesScreen />} />
           </Route>
