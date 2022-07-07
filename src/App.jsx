@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
@@ -10,9 +11,24 @@ import PurchasesScreen from "./components/Purchases/PurchasesScreen"
 import FooterScreen from "./components/Shared/FooterScreen"
 import HeaderScreen from "./components/Shared/HeaderScreen"
 import { getAllproducts } from "./store/slices/products.slice"
+import getConfig from "./utils/getConfig"
 
 
 function App() {
+
+
+  useEffect(() => {
+    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
+    const obj = {
+        street: "Green St. 1456",
+        colony: "Southwest",
+        zipCode: 123456,
+        city: "USA",
+        references: "Some references"
+    }
+    axios.get(URL, getConfig())
+      .then(res => console.log(res.data))
+  }, [])
 
   const dispatch = useDispatch()
 
