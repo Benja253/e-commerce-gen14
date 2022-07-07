@@ -8,12 +8,10 @@ const ProductInfoId = ({product}) => {
     const minus = counter - 1
     if(minus >= 1){
       setCounter(minus)
-    } 
+    }
   }
 
   const plusOne = () => setCounter(counter + 1)
-
-  console.log(product)
 
   return (
     <article className='product-info'>
@@ -25,10 +23,10 @@ const ProductInfoId = ({product}) => {
       </div>
       <div className='product-info__quantity-container'>
         <div onClick={minusOne} className='product-info__minus'>-</div>
-        <div>{counter}</div>
+        <div className='product-info__counter'>{counter}</div>
         <div onClick={plusOne} className='product-info__plus'>+</div>
       </div>
-      <button>Add to Cart <i className="fa-solid fa-cart-plus"></i></button>
+      <button className='product-info__btn'>Add to Cart <i className="fa-solid fa-cart-plus"></i></button>
     </article>
   )
 }

@@ -8,8 +8,6 @@ const SimilarProducts = ({product}) => {
 
   const allProducts = useSelector(state => state.products)
 
-  console.log(allProducts)
-
   useEffect(() => {
     if(allProducts.length !== 0){
       const filter = allProducts.filter(e => e.category.name === product?.category)
@@ -17,12 +15,10 @@ const SimilarProducts = ({product}) => {
     }
   }, [product])
 
-  console.log(filterProducts)
-
   return (
     <article className='similar-products'>
       <h2 className='similar-products__title'>Discover similar items</h2>
-      <div className='products-container'>
+      <div className='products-container product-container__similar'>
         {
           filterProducts?.map(e => {
             if(e.title !== product.title){

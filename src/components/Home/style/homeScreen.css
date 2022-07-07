@@ -2,12 +2,11 @@
   padding: var(--padding-mobile);
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px
 }
-
 .card-product {
-  width: min(100%, 300px);
+  width: min(100%, 220px);
   border-radius: 10px;
   border: 1px solid var(--border-color);
 }

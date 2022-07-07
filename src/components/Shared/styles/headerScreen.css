@@ -3,13 +3,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .header__title {
   color: var(--secondary-color);
 }
 .header__menuham{
   font-size: 1.4rem;
-  position: relative;
+  position: fixed;
+  top: 30px;
+  right: 20px;
   z-index: 2;
   cursor: pointer;
 }
