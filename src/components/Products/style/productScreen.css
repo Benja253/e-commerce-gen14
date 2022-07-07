@@ -148,8 +148,14 @@
     padding-left: var(--padding-tablet);
     padding-right: var(--padding-tablet);
   }
+  .product-info__title{
+    text-align: left;
+  }
   .similar-products {
     grid-column: span 2;
+  }
+  .product-info__btn{
+    width: 100%;
   }
 }
 @media screen and (min-width: 1024px) {
