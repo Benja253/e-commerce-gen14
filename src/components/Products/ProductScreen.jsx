@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ProductInfoId from './ProductInfoId'
+import SimilarProducts from './SimilarProducts'
 import './style/productScreen.css'
 
 const classImg = ['', 'second-img', 'third-img']
@@ -17,9 +19,7 @@ const ProductScreen = () => {
     axios.get(URL)
       .then(res => setProduct(res.data.data.product))
       .catch(err => console.log(err))
-  }, [])
-
-  console.log(product)
+  }, [id])
 
   const clickPrev = () => {
     const prevClass = indexClass - 1
@@ -71,6 +71,8 @@ const ProductScreen = () => {
           ></div>
         </div>
       </div>
+      <ProductInfoId product={product} />
+      <SimilarProducts product={product} />
     </div>
   )
 }

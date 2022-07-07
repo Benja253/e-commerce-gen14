@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import CartScreen from "./components/Cart/CartScreen"
 import HomeScreen from "./components/Home/HomeScreen"
@@ -7,9 +9,16 @@ import ProtectedRoutes from "./components/ProtectedRoutes"
 import PurchasesScreen from "./components/Purchases/PurchasesScreen"
 import FooterScreen from "./components/Shared/FooterScreen"
 import HeaderScreen from "./components/Shared/HeaderScreen"
+import { getAllproducts } from "./store/slices/products.slice"
 
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() =>{
+    dispatch(getAllproducts())
+  }, []) 
 
   return (
     <div className="App">
@@ -23,7 +32,7 @@ function App() {
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/purchases" element={<PurchasesScreen />} />
           </Route>
-          <Route path="/products/:id" element={<ProductScreen />} />
+          <Route path="/product/:id" element={<ProductScreen />} />
         </Routes>
 
       </main>

@@ -1,11 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({product}) => {
 
-  console.log(product)
+  const navigate = useNavigate()
+
+  const goToProductId = () => navigate(`/product/${product.id}`)
 
   return (
-    <article className='card-product'>
+    <article onClick={goToProductId} className='card-product'>
       <header className='card-product__header'>
         <img 
           className='card-product__img-back' 
