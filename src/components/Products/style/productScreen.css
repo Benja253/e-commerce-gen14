@@ -43,7 +43,8 @@
   border-left: 1px solid var(--border-color);
 }
 .product-info__minus,
-.product-info__counter{
+.product-info__plus,
+.product-info__btn{
   cursor: pointer;
 }
 .product-info__btn {

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import getConfig from '../../utils/getConfig'
+import PurchasesCard from './PurchasesCard'
 
 const PurchasesScreen = () => {
 
@@ -16,7 +17,19 @@ const PurchasesScreen = () => {
   console.log(purchases)
 
   return (
-    <div>PurchasesScreen</div>
+    <div className='purchases'>
+      <h2 className='purchases__title'>Purchases</h2>
+      <div className='purchases__container'>
+        {
+          purchases?.map(purchase => (
+            <PurchasesCard 
+              key={purchase.id}
+              purchase={purchase}
+            />
+          ))
+        }
+      </div>
+    </div>
   )
 }
 
