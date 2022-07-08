@@ -9,6 +9,12 @@
   width: min(100%, 220px);
   border-radius: 10px;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: box-shadow 200ms ease;
+}
+.card-product:hover {
+  box-shadow: 1px 1px 10px #888a;
+  transition: box-shadow 200ms ease;
 }
 .card-product__header {
   height: 200px;
@@ -73,4 +79,9 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   cursor: pointer;
+  transition: transform 200ms ease;
+}
+.card-product__btn:hover {
+  transform: scale(1.2);
+  transition: transform 200ms ease;
 }
