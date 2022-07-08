@@ -1,8 +1,15 @@
 import React from 'react'
 
-const ProductsPurchase = () => {
+const ProductsPurchase = ({product}) => {
+
+  console.log(product)
+
   return (
-    <div>ProductsPurchase</div>
+    <section>
+      <h4>{product.title}</h4>
+      <p>{product.productsInCart.quantity}</p>
+      <p>$ {product.price}</p>
+    </section>
   )
 }
 

@@ -2,8 +2,6 @@ import React from 'react'
 import ProductsPurchase from './ProductsPurchase'
 
 const PurchasesCard = ({purchase}) => {
-  
-  console.log(purchase)
 
   return (
     <article className='puchase-card'>

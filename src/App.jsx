@@ -16,6 +16,24 @@ import getConfig from "./utils/getConfig"
 
 function App() {
 
+  // useEffect(() => {
+    
+  //   const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+
+  //   const newUser = {
+  //     firstName: "Gilberto",
+  //     lastName: "Oyarzo",
+  //     email: "gilbertooyarzo1234@gmail.com",
+  //     password: "pass1234",
+  //     phone: "1234567891",
+  //     role: "admin"
+  //   }
+
+  //   axios.post(URL, newUser)
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.log(err.data))
+  // }, [])
+
   const dispatch = useDispatch()
 
   useEffect(() =>{

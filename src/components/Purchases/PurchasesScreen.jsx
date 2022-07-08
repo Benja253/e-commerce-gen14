@@ -14,11 +14,10 @@ const PurchasesScreen = () => {
       .catch(err => console.log(err))
   }, [])
 
-  console.log(purchases)
 
   return (
     <div className='purchases'>
-      <h2 className='purchases__title'>Purchases</h2>
+      <h2 className='purchases__title'>My Purchases</h2>
       <div className='purchases__container'>
         {
           purchases?.map(purchase => (
