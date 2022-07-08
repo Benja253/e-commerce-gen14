@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import getConfig from '../../utils/getConfig'
+import CartInfo from './CartInfo'
 import './style/cartScreen.css'
 
 const CartScreen = () => {
@@ -22,13 +24,23 @@ const CartScreen = () => {
       .catch(err => console.log(err.data))
   }
 
+  const cart = useSelector(state => state.cart)
+
   return (
     <div>
       <button onClick={postPurchase}>
-        <h2>Post Purchase</h2>
+        <h3>Confirm Purchase</h3>
       </button>
-
-    </div>
+      <h2>My Cart</h2>
+      {
+        cart?.map(productCart => (
+          <CartInfo 
+            key={productCart.id}
+            productCart={productCart}
+          />
+        ))
+      }
+    </div>  
   )
 }
 
