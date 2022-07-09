@@ -1,8 +1,23 @@
+import axios from 'axios'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { getAllProductsCart } from '../../store/slices/cart.slice'
+import getConfig from '../../utils/getConfig'
 
 const CartInfo = ({productCart}) => {
 
-  console.log(productCart)
+  const dispatch = useDispatch()
+
+  const deleteProductFromCart = () => {
+    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart/${productCart.id}`
+
+    axios.delete(URL, getConfig())
+      .then(res => {
+        console.log(res.data)
+        dispatch(getAllProductsCart())
+      })
+      .catch(err => console.log(err.data))
+  }
 
   return (
     <section className='cart-info'>
@@ -12,7 +27,7 @@ const CartInfo = ({productCart}) => {
       </header>
       <p className='cart-info__quantity'>{productCart.productsInCart.quantity}</p>
       <p className='cart-info__price'>$ {productCart.price}</p>
-      <div className='cart-info__btn'>
+      <div onClick={deleteProductFromCart} className='cart-info__btn'>
         <i className="fa-solid fa-trash-can"></i>
       </div>
     </section>
